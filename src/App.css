@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+
+.quote-box {
+  margin: 0 auto;
+  padding: 50px;
+  max-width: 25%;
+  min-height: 200px;
+  background-color: aquamarine;
+}
+
+.quote-author {
+  background-color: orange;
+  text-align: right;
+  height: 15%;
+  margin-top: 50px;
+}
