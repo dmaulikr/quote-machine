@@ -5,6 +5,7 @@ import Radium from 'radium';
 import Title from './Title.js'
 
 import {fadeInDown} from 'react-animations';
+// import './App.css';
 
 
 
@@ -21,13 +22,35 @@ const styles = {
     padding: '50px',
     maxWidth: '25%',
     minHeight: '200px',
-    backgroundColor: 'aquamarine'
+    backgroundColor: '#FFF586',
+
+  },
+  quoteText: {
+    fontFamily: 'Fira Sans'
   },
   quoteAuthor: {
-    backgroundColor: 'orange',
     textAlign: 'right',
     height: '15%',
-    marginTop: '50px'
+    marginTop: '50px',
+    fontFamily: 'Fira Sans',
+    fontStyle: 'italic'
+  },
+  button: {
+    marginTop: '50px',
+    color: 'white',
+    backgroundColor: 'blue',
+    height: '60px',
+    width: '300px',
+    borderRadius: '31px',
+    borderStyle: 'none',
+    fontSize: '30px',
+    fontFamily: 'Eczar, serif',
+    ':hover': {
+                borderStyle:'solid',
+                borderWidth: '3px',
+                borderColor: '#9FFFF2',
+                cursor: 'pointer' }
+
   }
 }
 
@@ -62,13 +85,13 @@ class AppContent extends Component {
 
   render() {
     return (
-        <div className="App" style={ styles.app }>
-          <Title words="Quote Machine"/>
-          <div className="quote-box" style={ styles.quoteBox }>
-            <h2 className="quote-text" style={ styles.fadeInDown }>{ this.state.quote }</h2>
-            <h3 className="quote-author" style={ styles.fadeInDown, styles.quoteAuthor }>{ this.state.quoteAuthor }</h3>
+        <div className="app" style={ styles.appContent }>
+          <Title words="QUOTE MACHINE" style={styles.title}/>
+          <div  style={ styles.quoteBox }>
+            <h2  style={styles.quoteText }>{ this.state.quote }</h2>
+            <h2  style={  styles.quoteAuthor }>{ this.state.quoteAuthor }</h2>
           </div>
-          <button className="" onClick={ this.getRandomQuote }>Retrieve A Quote</button>
+          <button  onClick={ this.getRandomQuote } style={ styles.button}>Retrieve a Quote</button>
         </div>
     );
   }
